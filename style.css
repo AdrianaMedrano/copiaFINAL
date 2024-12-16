@@ -11,8 +11,10 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
+    position: fixed; /* Esto hace que la barra de navegación quede fija */
+    top: 0; 
+    left: 0;
+    z-index: 1000;
     color: antiquewhite;
     font-weight: bold;
     font-size: 20px;
@@ -48,6 +50,7 @@ body {
 }
 
 .psp {
+    margin-top: 10px;
     display: flex;
     width: 100%;
 }
@@ -68,6 +71,7 @@ body {
     color: antiquewhite;
     text-align: center;
     padding: 40px 20px;
+    margin-top: 10px;
 }
 
 .bienvenida h1 {
@@ -165,21 +169,6 @@ body {
 .card:hover .back {
     transform: perspective(600px) rotateY(360deg);
 }
-
-.circle .adelante img {
-    border-radius: 50%;
-    vertical-align: top;
-    height: 15px;
-    width: auto;
-}
-
-.circle .ultimo img {
-    border-radius: 50%;
-    vertical-align: top;
-    height: 15px;
-    width: auto;
-}
-
 .barra {
     display: flex;
     align-items: center;
@@ -200,7 +189,7 @@ body {
 }
 
 .right img {
-    width: 15px;
+    width: 100%;
     height: auto;
     object-fit: cover;
     margin-top: 40px;
@@ -263,5 +252,55 @@ body {
 
     .right img {
         display: none;
+    }
+}
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-column h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-column p, .footer-column a {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    color: #f1c40f;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    background-color: #222;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 200px;
+        height: 350px;
     }
 }
