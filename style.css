@@ -1,9 +1,10 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-nav{
+
+nav {
     width: 100%;
     height: 100px;
     background-color: rgba(36, 36, 32, 0.712);
@@ -16,38 +17,47 @@ nav{
     font-weight: bold;
     font-size: 20px;
     padding: 10px 30px;
-    }
-nav img{
-    width: 100px; ;
-    height: 55px;
-
 }
-svg{
+
+nav img {
+    width: 100%;
+    height: 60px;
+}
+
+svg {
     width: 30px;
     height: 30px;
-    margin-right: 15px;
 }
-ul{
+
+ul {
     display: flex;
 }
-ul li{
+
+ul li {
     margin-right: 30px;
     list-style-type: none;
-
 }
-body{
+
+body {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     flex-wrap: wrap;
+    background-color: #f4f4f4;
 }
-.psp img{
-    width: 50%;
+
+.psp {
+    display: flex;
+    width: 100%;
+}
+
+.psp img {
+    width: 100%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    object-fit: cover;
 }
+
 .bienvenida {
     display: flex;
     justify-content: center;
@@ -57,48 +67,61 @@ body{
     background-color: rgb(87, 87, 75);
     color: antiquewhite;
     text-align: center;
+    padding: 40px 20px;
 }
-.bienvenida h1{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+.bienvenida h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-
+    margin-bottom: 20px;
 }
-.bienvenida button{
+
+.bienvenida button {
     height: 50px;
     width: 200px;
     vertical-align: top;
     background-color: rgba(42, 112, 42, 0.76);
     color: rgb(212, 191, 166);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
 }
+
 .card {
-    position:  relative;
+    position: relative;
     width: 250px;
     height: 400px;
-    margin: 10px;
+    margin: 20px;
+    transition: transform 0.5s;
 }
-.card .face{
+
+.card .face {
     position: absolute;
-    width: 100% ;
+    width: 100%;
     height: 100%;
     backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
-    transition: .5s;
+    transition: 0.5s;
 }
-.card .front{
+
+.card .front {
     transform: perspective(500px) rotateY(0deg);
     box-shadow: 5px 8px #000000b7;
 }
-.card .front img{
+
+.card .front img {
     position: absolute;
     width: 100%;
     height: 100%;
-   object-fit: cover;  /* esta funcion ajusta la img al contenedor */
+    object-fit: cover;
 }
-.card.front h3{
-    position: absolute; 
+
+.card.front h3 {
+    position: absolute;
     bottom: 0;
     width: 100%;
     height: 45px;
@@ -106,9 +129,8 @@ body{
     color: aliceblue;
     background-color: bisque;
     text-align: center;
-    align-items: last baseline;
-
 }
+
 .card .back {
     transform: perspective(600px) rotateY(180deg);
     background: #000;
@@ -119,34 +141,127 @@ body{
     justify-content: space-between;
     box-shadow: 0 5px #000;
 }
+
 .card.back.link {
     border-top: solid 1px #f3f3f3;
     height: 50px;
     line-height: 50px;
-
 }
 
 .card.back h3 {
     font-size: 30px;
-    margin-top: 20px ;
+    margin-top: 20px;
     letter-spacing: 1px;
 }
+
 .card.back p {
     letter-spacing: 1px;
 }
-.card:hover .front{
+
+.card:hover .front {
     transform: perspective(600px) rotateY(180deg);
 }
-.card:hover .back{
+
+.card:hover .back {
     transform: perspective(600px) rotateY(360deg);
 }
-.circle .adelante img{
-    border-radius: 50%;  /* vuelve a una imagen un circulo */  
+
+.circle .adelante img {
+    border-radius: 50%;
     vertical-align: top;
+    height: 15px;
+    width: auto;
 }
-.barra{
+
+.circle .ultimo img {
+    border-radius: 50%;
+    vertical-align: top;
+    height: 15px;
+    width: auto;
+}
+
+.barra {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 40px;
+}
 
+.barra2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.barra2 h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+.right img {
+    width: 15px;
+    height: auto;
+    object-fit: cover;
+    margin-top: 40px;
+}
+
+/* Estilo adicional para responsividad */
+@media (max-width: 768px) {
+    .bienvenida {
+        padding: 20px 10px;
+    }
+
+    .card {
+        width: 200px;
+        height: 350px;
+    }
+
+    .card .front h3,
+    .card .back h3 {
+        font-size: 20px;
+    }
+
+    nav {
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .psp img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .bienvenida h1 {
+        font-size: 18px;
+    }
+
+    .bienvenida button {
+        width: 180px;
+        height: 45px;
+    }
+
+    .card {
+        width: 170px;
+        height: 280px;
+    }
+
+    svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .right img {
+        display: none;
+    }
 }
