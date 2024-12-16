@@ -175,14 +175,12 @@ body {
     justify-content: center;
     margin-top: 40px;
 }
-
 .barra2 {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 40px;
 }
-
 .barra2 h3 {
     font-size: 20px;
     color: #333;
@@ -194,8 +192,28 @@ body {
     object-fit: cover;
     margin-top: 40px;
 }
-
-/* Estilo adicional para responsividad */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+}
+.galeria .imagen {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.galeria .imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+.galeria .imagen img:hover {
+    transform: scale(1.1);
+}
 @media (max-width: 768px) {
     .bienvenida {
         padding: 20px 10px;
